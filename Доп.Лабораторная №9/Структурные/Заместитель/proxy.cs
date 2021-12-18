@@ -52,6 +52,7 @@ namespace Factory
             MeleeWeapon sword = new MeleeWeapon();
             player.Damage(sword);
             Guns gun = new Guns();
+            #Использование адаптера
             ISword gunn = new Adapter(gun);
             player.Damage(gunn);
 

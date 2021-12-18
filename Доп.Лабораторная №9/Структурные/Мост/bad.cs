@@ -3,25 +3,25 @@ using System;
 namespace Factory
 {
 
-    class Shape { }
+    class Weapon { }
     
-    class Rectangle : Shape { }
-    class Circle : Shape { }
+    class DragonSword : Weapon { }
+    class SpikedShield : Weapon { }
 
-    class RedRectangle : Rectangle { }
-    class GreenRectangle : Rectangle { }
+    class RedDragonSword : DragonSword { }
+    class GreenDragonSword : DragonSword { }
 
-    class RedCircle : Circle { }
-    class GreenCircle : Circle { }
+    class RedSpikedShield: SpikedShield { }
+    class GreenSpikedShield : SpikedShield { }
 
-    class Square : Shape { }
+    class MagicStick : Weapon { }
 
-    class RedSquare : Square { }
-    class GreenSquare : Square { }
+    class RedMagicStick: MagicStick { }
+    class GreenMagicStick : MagicStick { }
 
-    class YellowSquare : Square { }
-    class YellowCircle : Circle { }
-    class YellowRectangle : Rectangle { }
+    class YellowMagicStick: MagicStick { }
+    class YellowSpikedShield : SpikedShield { }
+    class YellowDragonSword : DragonSword { }
 
 
 

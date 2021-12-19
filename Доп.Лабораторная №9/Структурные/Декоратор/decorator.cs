@@ -4,7 +4,7 @@ namespace Decorator
 {
     class Pizza
     {
-        public virtual string MakePizza() => "Тесто + ";
+        public virtual string Make() => "Тесто + ";
     }
 
     class Cheese : Pizza
@@ -14,45 +14,45 @@ namespace Decorator
         {
             this.pizza = pizza;
         }
-        public override string MakePizza()
+        public override string Make()
         {
-            return pizza.MakePizza() + " Сыр + ";
+            return pizza.Make() + " Сыр + ";
         }
     }
-    class ChickenPizza : Pizza
+    class Chicken : Pizza
     {
         Pizza pizza;
-        public ChickenPizza(Pizza pizza)
+        public Chicken(Pizza pizza)
         {
             this.pizza = pizza;
         }
-        public override string MakePizza()
+        public override string Make()
         {
-            return pizza.MakePizza() + " Пицца с курицей + ";
+            return pizza.Make() + " Курица + ";
         }
     }
-    class FishPizza : Pizza
+    class Fish : Pizza
     {
         Pizza pizza;
-        public FishPizza(Pizza pizza)
+        public Fish(Pizza pizza)
         {
             this.pizza = pizza;
         }
-        public override string MakePizza()
+        public override string Make()
         {
-            return pizza.MakePizza() + " Пица с рыбой + ";
+            return pizza.Make() + " Рыба + ";
         }
     }
-    class MeatPizza : Pizza
+    class Meat : Pizza
     {
         Pizza pizza;
-        public MeatPizza(Pizza pizza)
+        public Meat(Pizza pizza)
         {
             this.pizza = pizza;
         }
-        public override string MakePizza()
+        public override string Make()
         {
-            return pizza.MakePizza() + " Пица с мясом + ";
+            return pizza.Make() + " Мясо + ";
         }
     }
     class Olives : Pizza
@@ -62,9 +62,9 @@ namespace Decorator
         {
             this.pizza = pizza; 
         }
-        public override string MakePizza()
+        public override string Make()
         {
-            return pizza.MakePizza() + " Оливки + ";
+            return pizza.Make() + " Оливки + ";
         }
     }
 
@@ -72,14 +72,11 @@ namespace Decorator
     {
         static void Main(string[] args)
         {
-            Pizza chickenPizza = new ChickenPizza(new Pizza());
-            Console.WriteLine(chickenPizza.MakePizza());
+            var chickenCheesePizza = new Cheese(new Chicken(new Pizza()));
+            Console.WriteLine(chickenCheesePizza.Make());
 
-            var chickenCheesePizza = new Cheese(new ChickenPizza(new Pizza()));
-            Console.WriteLine(chickenCheesePizza.MakePizza());
-
-            var chickenOlivesCheesePizza = new Olives(new Cheese(new ChickenPizza(new Pizza())));
-            Console.WriteLine(chickenOlivesCheesePizza.MakePizza());
+            var chickenOlivesCheesePizza = new Olives(new Cheese(new Chicken(new Pizza())));
+            Console.WriteLine(chickenOlivesCheesePizza.Make());
         }
     }
 }

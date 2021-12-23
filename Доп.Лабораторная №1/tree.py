@@ -82,14 +82,14 @@ search_hashes = []
 
 with open(txt, 'w') as f:
 
-    for i in range(100):
+    for i in range(10000):
         tmp_string = random_string()
         tmp_hash = generate_hash(tmp_string) #присваем хеш строке
         hashes.append(tmp_hash)
 
         t.add(tmp_hash, i)
         f.write(tmp_string + " - " + str(tmp_hash) + '\n') #сохраняем строку с хешем
-    for i in range(100):
+    for i in range(10000):
             search_hashes.append(random.choice(hashes))
 
     print(f"{len(search_hashes)} хешей из файла")

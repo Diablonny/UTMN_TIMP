@@ -21,10 +21,10 @@ namespace ConsoleApp8
 
             item1.Value = 13;
 
-            Console.WriteLine($"item1.GetHashCode() {item1.GetHashCode()}  {item1.Value}");
-            Console.WriteLine($"item2.GetHashCode() {item2.GetHashCode()}  {item2.Value}");
-            //item1.GetHashCode() 58225482  13
-            //item2.GetHashCode() 58225482  13
+            Console.WriteLine($"{item1.GetHashCode()}  {item1.Value}");
+            Console.WriteLine($"{item2.GetHashCode()}  {item2.Value}");
+            //58225482  13
+            //58225482  13
         }
     }
 }

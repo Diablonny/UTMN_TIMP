@@ -1,17 +1,16 @@
 using System;
-using System.Collections.Generic;
 
 namespace ConsoleApp8
 {
     class Singleton
     {
         public int Value { get; set; }
-        private Singleton() { Value = 1212; }
+        private Singleton() { Value = 1212; } //скрытый конструктор
 
         static Lazy<Singleton> uniqueInstance
-            = new Lazy<Singleton>(() => new Singleton());
+            = new Lazy<Singleton>(() => new Singleton()); //статическое поле экземляра этого класса
 
-        public static Singleton Instance => uniqueInstance.Value;
+        public static Singleton Instance => uniqueInstance.Value; //открываем поле пользователю
     }
     class Program
     {

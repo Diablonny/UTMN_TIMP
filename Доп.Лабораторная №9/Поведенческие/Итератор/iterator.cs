@@ -33,13 +33,10 @@ namespace ConsoleApp8
 
             SimpleSet<int> set = new(array);
 
-            Console.WriteLine();
-
             set.Reset();
             while (set.MoveNext()) Console.Write($"{set.Current} "); 
             //выведет 6 5 4 3 2 1
 
-            Console.WriteLine();
         }
     }
 }

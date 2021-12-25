@@ -3,12 +3,14 @@ using System.Collections.Generic;
 
 namespace ConsoleApp8
 {
+    //Уровень приоритета звонка или же кому адресуется звонок
     enum Responsibility
     {
         AutoAnswer = 1,
         HelpCenter = 2,
         Master = 3
     }
+    //Кто на каком уровне ответственен
     abstract class Participant
     {
         public abstract void Conversation(string message, Responsibility level);
@@ -90,13 +92,13 @@ namespace ConsoleApp8
             HelpCenter marija = new HelpCenter(Responsibility.HelpCenter);
 
             robot.Next = marija;
-            injener.Next = robot;
+            marija.Next = injener;
 
-            robot.Conversation("Алло", Responsibility.AutoAnswer);
+            robot.Conversation("Алло", Responsibility.HelpCenter);
             Console.WriteLine("\n");
-            robot.Conversation("Переключите на мастера", Responsibility.HelpCenter);
+            robot.Conversation("Переключите на мастера", Responsibility.Master);
             Console.WriteLine("\n");
-            robot.Conversation("Переключите на робота", Responsibility.Master);
+            robot.Conversation("Переключите на робота", Responsibility.AutoAnswer);
         }
     }
 }

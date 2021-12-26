@@ -61,7 +61,7 @@ namespace ConsoleApp9
             jenya.SendMessage("Привет, я Женя");
 
             sergey.SendMessage("Есть паттерн посредник?");
-            michail.SendMessage("Да");
+            jenya.SendMessage("Да");
         }
     }
 }
